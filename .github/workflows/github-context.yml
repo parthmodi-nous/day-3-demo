@@ -1,0 +1,12 @@
+name: Github context
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+jobs:
+  output_github_context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output github context
+        run: echo "${{ toJson(github.event.pull_request) }}"
