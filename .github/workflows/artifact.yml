@@ -6,7 +6,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+      - name: install dependencies
+        run: npm ci
       - name: Run tests
         run: npm run test
   build:
@@ -14,6 +15,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: install dependencies
+        run: npm ci
 
       - name: Build project
         run: npm run build
